@@ -75,37 +75,37 @@ void editar_listaCompras(TListaTarefas *lista){
 
 
 
-void ver_listaCompleta(TListaTarefas lista){
+void ver_listaCompleta(TListaTarefas *lista){
     
     printf("Lista de Compras\n");
-        printf("\tCachos de banana necessários: %d | ", lista.compras.cachosBanana);
-            conferir_itemLista(lista.compras.cachosBanana);
-        printf("\tMaçãs necessárias: %d | ", lista.compras.macas);
-            conferir_itemLista(lista.compras.macas);
-        printf("\tLitros de amaciante necessário: %d | ", lista.compras.amaciante);
-            conferir_itemLista(lista.compras.amaciante);
-        printf("\tEsponjas necessárias: %d | ", lista.compras.esponja);
-            conferir_itemLista(lista.compras.esponja);
+        printf("\tCachos de banana necessários: %d | ", lista->compras.cachosBanana);
+            conferir_itemLista(lista->compras.cachosBanana);
+        printf("\tMaçãs necessárias: %d | ", lista->compras.macas);
+            conferir_itemLista(lista->compras.macas);
+        printf("\tLitros de amaciante necessário: %d | ", lista->compras.amaciante);
+            conferir_itemLista(lista->compras.amaciante);
+        printf("\tEsponjas necessárias: %d | ", lista->compras.esponja);
+            conferir_itemLista(lista->compras.esponja);
     
     printf("Tarefas domésticas\n");
         printf("\tBanheiro | ");
-            conferir_itemLista(lista.domestica.banheiro);
+            conferir_itemLista(lista->domestica.banheiro);
         printf("\tPoeira | ");
-            conferir_itemLista(lista.domestica.poeira);
+            conferir_itemLista(lista->domestica.poeira);
         printf("\tPanelas | ");
-            conferir_itemLista(lista.domestica.panelas);
+            conferir_itemLista(lista->domestica.panelas);
     
     printf("Atividades faculdade\n");
-        printf("\tAtividades de Estrutura de Dados: %d | ", lista.faculdade.estruturaDados);
-            conferir_itemLista(lista.faculdade.estruturaDados);
-        printf("\tAtividades do Projeto Integrador: %d | ", lista.faculdade.projetoIntegrador);
-            conferir_itemLista(lista.faculdade.projetoIntegrador);
+        printf("\tAtividades de Estrutura de Dados: %d | ", lista->faculdade.estruturaDados);
+            conferir_itemLista(lista->faculdade.estruturaDados);
+        printf("\tAtividades do Projeto Integrador: %d | ", lista->faculdade.projetoIntegrador);
+            conferir_itemLista(lista->faculdade.projetoIntegrador);
     
     printf("Projetos Pessoais\n");
-        printf("\tVideos do curso para serem vistos: %d | ", lista.projetos.videosCurso);
-            conferir_itemLista(lista.projetos.videosCurso);
-        printf("\tAtividades do curso para serem feitas: %d | ", lista.projetos.tarefasCurso);
-            conferir_itemLista(lista.projetos.tarefasCurso);
+        printf("\tVideos do curso para serem vistos: %d | ", lista->projetos.videosCurso);
+            conferir_itemLista(lista->projetos.videosCurso);
+        printf("\tAtividades do curso para serem feitas: %d | ", lista->projetos.tarefasCurso);
+            conferir_itemLista(lista->projetos.tarefasCurso);
     
     
     printf("\n");
@@ -114,7 +114,7 @@ void ver_listaCompleta(TListaTarefas lista){
 
 
 
-void painel(TListaTarefas lista, int *escolha){
+void painel(TListaTarefas *lista, int *escolha){
     int opcao;
     
     printf("Digite 0 para fechar o programa\n");
@@ -134,7 +134,7 @@ void painel(TListaTarefas lista, int *escolha){
             break;
         
         case 1:
-            ver_listaCompleta(lista);
+            ver_listaCompleta(&lista);
             break;
         
         case 2:
@@ -192,7 +192,7 @@ int main() {
     int escolha;
 
     do{
-        painel(lista, &escolha);
+        painel(&lista, &escolha);
     }while(escolha!=0);
 
     return 0;
