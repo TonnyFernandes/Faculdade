@@ -140,14 +140,16 @@ void editar_listaFaculdade(TListaTarefas *lista){
                 break;
             
             case 1:
-                printf("Digite a nova quantidade de tarefas na disciplina de \n");
+                printf("Digite a nova quantidade de tarefas na disciplina de Estrutura de Dados\n");
                 scanf("%d", &novoValor);
                 lista->faculdade.estruturaDados = novoValor;
+                break;
                 
             case 2:
-                printf("Digite a nova quantidade de tarefas na disciplina de \n");
+                printf("Digite a nova quantidade de tarefas na disciplina de Projeto Integrador\n");
                 scanf("%d", &novoValor);
                 lista->faculdade.projetoIntegrador = novoValor;
+                break;
             
             default:
                 printf("Opção inválida, tente novamente\n\n");
@@ -176,13 +178,13 @@ void editar_listaProjetos(TListaTarefas *lista){
             case 1:
                 printf("Digite a nova quantidade de vídeos do curso que estão pendentes");
                 scanf("%d", &novoValor);
-                lista->projetos.videosCurso;
+                lista->projetos.videosCurso = novoValor;
                 break;
             
             case 2:
                 printf("Digite a nova quantidade de tarefas do curso que estão pendentes");
                 scanf("%d", &novoValor);
-                lista->projetos.tarefasCurso;
+                lista->projetos.tarefasCurso = novoValor;
                 break;
             
             default:
